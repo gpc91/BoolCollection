@@ -6,13 +6,19 @@ namespace Gpc91;
 /// <summary>
 /// Contains a collection of <see cref="Boolean"/> types that each take up the space of a bit within a byte.
 /// The BoolCollection creates a dynamically sized collection to store a collection of booleans. 
-/// <remarks>Normally a <see cref="Boolean"/> takes up a single <see cref="Byte"/> of 8-bits. In those 8-bits we can instead, using a collection to store up to 8 boolean values."/></remarks>
+/// <remarks>Normally a <see cref="Boolean"/> takes up a single <see cref="Byte"/> of 8-bits. In those 8-bits we can instead, using a collection, store up to 8 boolean values.</remarks>
 /// </summary>
 public class BoolCollection : IEnumerable
     {
         public dynamic Collection { get; private set; } = 0;
 
+        /// <summary>
+        /// The bit-size of the collection
+        /// </summary>
         public byte Bits { get; private set; } = 0; 
+        /// <summary>
+        /// The size of the collection in bytes
+        /// </summary>
         public byte Bytes => (byte) (Bits / 0b1000);
 
         /// <summary>
